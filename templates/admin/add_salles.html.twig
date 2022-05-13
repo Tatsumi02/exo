@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} add_salles{% endblock %}
+
+{% block content  %}
+
+ <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Creation Salles</h4>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card-box">
+                            <h4 class="card-title">Creation Salles</h4>
+                            <form action="{{path('save_salles')}}" method="POST">
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-2">Nom</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="nom">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <label class="col-form-label col-md-2">Localisattion</label>
+                                    <div class="col-md-10">
+                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter text here" name="localisation"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Creer</button>
+                            </form>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+{% endblock %}

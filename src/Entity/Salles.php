@@ -24,7 +24,7 @@ class Salles
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $status;
 
-    #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'salles')]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'salles')]
     #[ORM\JoinColumn(nullable: false)]
     private $posseseur;
 
@@ -84,12 +84,12 @@ class Salles
         return $this;
     }
 
-    public function getPosseseur(): ?self
+    public function getPosseseur(): ?User
     {
         return $this->posseseur;
     }
 
-    public function setPosseseur(?self $posseseur): self
+    public function setPosseseur(?User $posseseur): self
     {
         $this->posseseur = $posseseur;
 

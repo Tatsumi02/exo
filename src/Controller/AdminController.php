@@ -50,11 +50,10 @@ class AdminController extends AbstractController
     public function save_salles(SallesRepository $salleRepository, UserRepository $userRepository, Request $request): Response
     {
         $datas = $request->request->all();
-        $admin = $userRepository->findOneBy(['posseseur' => $this->getUser()]);
-
+        // $admin = $userRepository->findOneBy(['posseseur' => $this->getUser()]);
 
         $salle = new Salles();
-        $salle->setPosseseur($admin);
+        $salle->setPosseseur($this->getUser());
         $salle->setNom($datas['nom']);
         $salle->setLocalisation($datas['localisation']);
 
